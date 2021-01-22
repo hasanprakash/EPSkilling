@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>EP</title>
+	<script type="text/javascript">
+
+		function fun() {
+			var user = document.f1.user.value;
+			var email = document.f1.email.value;
+			console.log(user+" "+email);
+
+			var at = parseInt(email.indexOf('@'));
+			var dot = parseInt(email.lastIndexOf('.'));
+			if(at==-1 || dot==-1)
+				alert("enter valid email");
+			else if(dot > at && email[dot+2]!=null)
+				alert("valid email");
+			else
+				alert("invalid email");
+
+
+
+
+		}
+ 		
+	</script>
+</head>
+<body>
+	<form name="f1" onsubmit="fun()">
+		<input type="text" placeholder="username" name="user" required><br>
+		<input type="text" placeholder="email" name="email" required><br>
+		<button type="submit">submit</button>
+	</form>
+</body>
+</html>
